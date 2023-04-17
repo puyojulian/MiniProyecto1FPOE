@@ -4,6 +4,12 @@
  */
 package co.edu.univalle.miniproyecto1;
 
+import co.edu.univalle.miniproyecto1.view.VistaInicio;
+import co.edu.univalle.miniproyecto1.view.VistaInstrucciones;
+import co.edu.univalle.miniproyecto1.view.VistaJuego;
+import co.edu.univalle.miniproyecto1.view.VistaParametros;
+import co.edu.univalle.miniproyecto1.logic.Juego;
+
 /**
  *
  * @author julia
