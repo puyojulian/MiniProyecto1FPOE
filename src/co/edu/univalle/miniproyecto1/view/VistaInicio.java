@@ -13,8 +13,9 @@ public class VistaInicio extends JFrame {
 
     public VistaInicio() {
         setTitle("Juego | Fuga de Letras"); // Título de la ventana
-        setSize(800, 600); // Tamaño de la ventana
+        setSize(480, 620); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
         inicializarComponentes(); // Inicializa los componentes de la ventana
         setVisible(true);
@@ -49,6 +50,10 @@ public class VistaInicio extends JFrame {
             if(evento.getSource() == btnJugar){                
                 dispose(); 
                 VistaParametros ventanaParametros = new VistaParametros();
+            }
+            else if(evento.getSource() == btnInstrucciones){                
+                dispose(); 
+                VistaInstrucciones ventanaInstrucciones = new VistaInstrucciones();
             }
             
         }

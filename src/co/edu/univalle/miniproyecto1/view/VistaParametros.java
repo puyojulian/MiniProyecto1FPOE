@@ -33,7 +33,7 @@ public class VistaParametros extends JFrame{
     
     public VistaParametros() {
         setTitle("Juego | Fuga de Letras"); // Título de la ventana
-        setSize(800, 600); // Tamaño de la ventana
+        setSize(480, 620); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
         inicializarComponentes(); // Inicializa los componentes de la ventana
