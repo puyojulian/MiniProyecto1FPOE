@@ -4,23 +4,15 @@
  */
 package co.edu.univalle.miniproyecto1;
 
-import co.edu.univalle.miniproyecto1.view.VistaInicio;
-import co.edu.univalle.miniproyecto1.view.VistaInstrucciones;
-import co.edu.univalle.miniproyecto1.view.VistaJuego;
-import co.edu.univalle.miniproyecto1.view.VistaParametros;
-import co.edu.univalle.miniproyecto1.logic.Juego;
+import co.edu.univalle.miniproyecto1.view.Ventana;
 
 /**
  *
  * @author julia
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        VistaInicio ventana = new VistaInicio(); 
+        Ventana ventana = new Ventana(); // Crea un objeto de la clase Ventana
+        ventana.setVisible(true); // Muestra la ventana
     }
-    
 }
