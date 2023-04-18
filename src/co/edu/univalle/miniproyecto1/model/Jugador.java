@@ -9,5 +9,21 @@ package co.edu.univalle.miniproyecto1.model;
  * @author julia
  */
 public class Jugador {
+    private String nombre;
     
+    public Jugador(){
+        nombre = "Jugador";
+    }
+    
+    public Jugador(String nombre){
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
