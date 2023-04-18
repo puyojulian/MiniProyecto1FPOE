@@ -18,11 +18,12 @@ public class VistaInstrucciones extends JFrame {
     private JLabel lblInstrucciones;
     private JButton btnJugar;
     private JButton btnVolver;
+    private Container mainContainer;
     
     public VistaInstrucciones() {
         
         setTitle("Juego | Fuga de Letras"); // Título de la ventana
-        setSize(480, 620); // Tamaño de la ventana
+        setSize(480, 520); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
@@ -32,18 +33,23 @@ public class VistaInstrucciones extends JFrame {
     
     private void inicializarComponentes() {
         
-        lblInstrucciones = new JLabel("Texto de instrucciones Texto de instrucciones Texto de instrucciones Texto de instrucciones",SwingConstants.CENTER);
-        lblInstrucciones.setFont(new Font("Arial", Font.BOLD, 18)); // Establece el tamaño y tipo de fuente del título
+        getContentPane().setLayout(null);
+        
+        lblInstrucciones = new JLabel("<HTML>Texto de instrucciones Texto de instrucciones Texto de instrucciones Texto de instrucciones Texto Inst<HTML>",SwingConstants.CENTER);
+        lblInstrucciones.setHorizontalAlignment(JLabel.CENTER);
+        lblInstrucciones.setFont(new Font("Arial", Font.BOLD, 16)); // Establece el tamaño y tipo de fuente del título
+        lblInstrucciones.setSize(240,100);
+        lblInstrucciones.setBounds(10,100,400,100);
 
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
         
         btnJugar = new JButton("Jugar");
-        btnJugar.setBounds(100,400,30,20);
+        btnJugar.setBounds(190,300,100,40);
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnVolver = new JButton("Volver");
         btnVolver.addActionListener(manejadorDeEventos);
-        btnVolver.setBounds(100,400,30,20);
+        btnVolver.setBounds(190,380,100,40);
         
         add(lblInstrucciones);
         add(btnJugar);
