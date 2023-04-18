@@ -4,7 +4,7 @@
  */
 package co.edu.univalle.miniproyecto1;
 
-import co.edu.univalle.miniproyecto1.view.Ventana;
+import co.edu.univalle.miniproyecto1.view.VistaInicio;
 
 /**
  *
@@ -12,7 +12,7 @@ import co.edu.univalle.miniproyecto1.view.Ventana;
  */
 public class Main {
     public static void main(String[] args) {
-        Ventana ventana = new Ventana(); // Crea un objeto de la clase Ventana
-        ventana.setVisible(true); // Muestra la ventana
+        VistaInicio ventana = new VistaInicio(); // Crea un objeto de la clase Ventana
+         // Muestra la ventana
     }
 }
