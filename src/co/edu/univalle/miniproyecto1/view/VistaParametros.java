@@ -17,6 +17,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
 /**
  *
@@ -30,9 +31,9 @@ public class VistaParametros extends JFrame{
     private JTextField txtNombre;
     
     private JLabel lblCategoria;
-    private JButton btnCatAnimales;
-    private JButton btnCatColores;
-    private JButton btnCatFrutas;
+    private JToggleButton btnCatAnimales;
+    private JToggleButton btnCatColores;
+    private JToggleButton btnCatFrutas;
     private JButton btnConfirmar;
 
     public VistaParametros() {
@@ -74,17 +75,17 @@ public class VistaParametros extends JFrame{
         
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
         
-        btnCatAnimales = new JButton("Animales");
+        btnCatAnimales = new JToggleButton("Animales");
         btnCatAnimales.setBounds(90,300, 90,35);
         btnCatAnimales.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnCatAnimales.addActionListener(manejadorDeEventos);
         
-        btnCatColores = new JButton("Colores");
+        btnCatColores = new JToggleButton("Colores");
         btnCatColores.setBounds(190,300, 90,35);
         btnCatColores.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnCatColores.addActionListener(manejadorDeEventos);
         
-        btnCatFrutas = new JButton("Frutas");
+        btnCatFrutas = new JToggleButton("Frutas");
         btnCatFrutas.setBounds(290,300, 90,35);
         btnCatFrutas.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnCatFrutas.addActionListener(manejadorDeEventos);
@@ -107,22 +108,29 @@ public class VistaParametros extends JFrame{
 
         @Override
         public void actionPerformed(ActionEvent evento) {
-            if(evento.getSource() == btnConfirmar) {                
-                dispose(); 
-                VistaJuego vistaJuego = new VistaJuego();
+            if(evento.getSource() == btnCatAnimales) {                
+                btnCatColores.setSelected(false);
+                btnCatFrutas.setSelected(false);
             }
-//            else if(evento.getSource() == btnConfirmar) {
-//                dispose(); 
-//                VistaInicio ventanaInicio = new VistaInicio();
-//            }
-//            else if(evento.getSource() == btnConfirmar) {                
-//                dispose(); 
-//                VistaParametros ventanaParametros = new VistaParametros();
-//            }
-//            else if(evento.getSource() == btnConfirmar) {
-//                dispose(); 
-//                VistaInicio ventanaInicio = new VistaInicio();
-//            }
+            else if(evento.getSource() == btnCatColores) {
+                btnCatAnimales.setSelected(false);
+                btnCatFrutas.setSelected(false);
+            }
+            else if(evento.getSource() == btnCatFrutas) {                
+                btnCatAnimales.setSelected(false);
+                btnCatColores.setSelected(false);
+            }
+            if(evento.getSource() == btnConfirmar) {
+                if(btnCatAnimales.isSelected()) {
+                    
+                }
+                else if(btnCatColores.isSelected()) {
+                    
+                }
+                else if(btnCatFrutas.isSelected()) {
+                    
+                }
+            }
         }
     }
 }
