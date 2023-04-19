@@ -23,6 +23,9 @@ import javax.swing.SwingConstants;
  * @author julia
  */
 public class VistaParametros extends JFrame{
+    
+    private JPanel jpContenido;
+    
     private JLabel lblNombre;
     private JTextField txtNombre;
     
@@ -31,7 +34,6 @@ public class VistaParametros extends JFrame{
     private JButton btnCatColores;
     private JButton btnCatFrutas;
     private JButton btnConfirmar;
-    private JPanel mainPanel;
 
     public VistaParametros() {
         
@@ -47,13 +49,13 @@ public class VistaParametros extends JFrame{
 
     private void inicializarComponentes() {
         
-        mainPanel = new JPanel();
-        mainPanel.setSize(480, 580);
-        mainPanel.setBounds(0,0,480,580);
-        mainPanel.setLayout(null);
-        mainPanel.setBackground(Color.LIGHT_GRAY);
+        jpContenido = new JPanel();
+        jpContenido.setSize(480, 580);
+        jpContenido.setBounds(0,0,480,580);
+        jpContenido.setLayout(null);
+        jpContenido.setBackground(Color.LIGHT_GRAY);
         
-        add(mainPanel);
+        add(jpContenido);
         
         lblNombre = new JLabel("Escribe tu nombre",SwingConstants.CENTER);
         lblNombre.setFont(new Font("comic sans ms", Font.PLAIN, 20));
@@ -92,13 +94,13 @@ public class VistaParametros extends JFrame{
         btnConfirmar.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnConfirmar.addActionListener(manejadorDeEventos);
         
-        mainPanel.add(lblNombre);
-        mainPanel.add(txtNombre);
-        mainPanel.add(lblCategoria);
-        mainPanel.add(btnCatAnimales);
-        mainPanel.add(btnCatColores);
-        mainPanel.add(btnCatFrutas);
-        mainPanel.add(btnConfirmar);
+        jpContenido.add(lblNombre);
+        jpContenido.add(txtNombre);
+        jpContenido.add(lblCategoria);
+        jpContenido.add(btnCatAnimales);
+        jpContenido.add(btnCatColores);
+        jpContenido.add(btnCatFrutas);
+        jpContenido.add(btnConfirmar);
     }
     
     private class ManejadorDeEventos implements ActionListener {

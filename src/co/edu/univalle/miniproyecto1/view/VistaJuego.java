@@ -73,7 +73,7 @@ public class VistaJuego extends JFrame {
         
         lblContadorFallos = new JLabel("Fallos: " + numeroFallos);
         lblContadorFallos.setFont(new Font("comic sans ms", Font.BOLD, 12));
-        lblContadorFallos.setBounds(400,5, 60,20);
+        lblContadorFallos.setBounds(390,5, 60,20);
         
         lblPalabra = new JLabel("Pal_bra",SwingConstants.CENTER);
         lblPalabra.setFont(new Font("comic sans ms", Font.PLAIN, 40));
@@ -122,7 +122,7 @@ public class VistaJuego extends JFrame {
         @Override
         public void actionPerformed(ActionEvent evento) {
             if(evento.getSource() == btnA) {                
-
+                
             }
             else if(evento.getSource() == btnE) {
 
