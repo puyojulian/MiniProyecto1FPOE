@@ -43,6 +43,14 @@ public class Juego {
     }
     
     public String getPalabra() {
+        String[] palabras = {"manzana", "pera", "platano", "sandia", "naranja"};
+
+        Random random = new Random();
+        int indiceAleatorio = random.nextInt(palabras.length);
+
+        String palabraAleatoria = palabras[indiceAleatorio];
+
+        System.out.println("La palabra aleatoria es: " + palabraAleatoria);
         
         Random numeroAleatorio = new Random();
         
