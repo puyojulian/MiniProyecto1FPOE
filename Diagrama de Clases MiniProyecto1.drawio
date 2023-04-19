@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-19T16:28:08.689Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="D7-53yQcv_c0sJZpIXvk" version="21.2.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-19T19:49:20.492Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="slQvTHXU2pj8jiEsTQCi" version="21.2.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1912" dy="1069" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -105,17 +105,14 @@
         <mxCell id="qx6XCxgeJxMdSCcZh3zr-31" value="&amp;nbsp;+ Juego(string categoria, string nombreUsuario)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="zkfFHV4jXpPFQw0GAbJ--13" vertex="1">
           <mxGeometry y="268" width="280" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qx6XCxgeJxMdSCcZh3zr-56" value="&amp;nbsp;+ getPalabra(): string" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="zkfFHV4jXpPFQw0GAbJ--13" vertex="1">
+        <mxCell id="qx6XCxgeJxMdSCcZh3zr-56" value="&amp;nbsp;+ getPalabra(): String" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="zkfFHV4jXpPFQw0GAbJ--13" vertex="1">
           <mxGeometry y="298" width="280" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="qx6XCxgeJxMdSCcZh3zr-57" value="&amp;nbsp;+ encontrarIndiceBorrar(string palabra): int" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="zkfFHV4jXpPFQw0GAbJ--13" vertex="1">
+        <mxCell id="qx6XCxgeJxMdSCcZh3zr-57" value="&amp;nbsp;+ verificarPalabra(): boolean" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="zkfFHV4jXpPFQw0GAbJ--13" vertex="1">
           <mxGeometry y="328" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="qx6XCxgeJxMdSCcZh3zr-58" value="&amp;nbsp;+ mostrarImagen(string categoria, )" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="zkfFHV4jXpPFQw0GAbJ--13" vertex="1">
           <mxGeometry y="358" width="280" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="qx6XCxgeJxMdSCcZh3zr-61" value="&amp;nbsp;+ getPalabraMostrar(): string" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="zkfFHV4jXpPFQw0GAbJ--13" vertex="1">
-          <mxGeometry y="388" width="280" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--17" value="VistaInicio" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="17.5" y="240" width="160" height="190" as="geometry">
