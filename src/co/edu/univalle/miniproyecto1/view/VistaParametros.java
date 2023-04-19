@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import co.edu.univalle.miniproyecto1.logic.Juego;
+import co.edu.univalle.miniproyecto1.model.Jugador;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -76,22 +77,22 @@ public class VistaParametros extends JFrame{
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
         
         btnCatAnimales = new JToggleButton("Animales");
-        btnCatAnimales.setBounds(90,300, 90,35);
+        btnCatAnimales.setBounds(90,300, 100,35);
         btnCatAnimales.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnCatAnimales.addActionListener(manejadorDeEventos);
         
         btnCatColores = new JToggleButton("Colores");
-        btnCatColores.setBounds(190,300, 90,35);
+        btnCatColores.setBounds(190,300, 100,35);
         btnCatColores.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnCatColores.addActionListener(manejadorDeEventos);
         
         btnCatFrutas = new JToggleButton("Frutas");
-        btnCatFrutas.setBounds(290,300, 90,35);
+        btnCatFrutas.setBounds(290,300, 100,35);
         btnCatFrutas.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnCatFrutas.addActionListener(manejadorDeEventos);
         
         btnConfirmar = new JButton("Confirmar");
-        btnConfirmar.setBounds(175,370, 120,35);
+        btnConfirmar.setBounds(180,370, 120,35);
         btnConfirmar.setFont(new Font("comic sans ms", Font.PLAIN, 14));
         btnConfirmar.addActionListener(manejadorDeEventos);
         
@@ -122,13 +123,16 @@ public class VistaParametros extends JFrame{
             }
             if(evento.getSource() == btnConfirmar) {
                 if(btnCatAnimales.isSelected()) {
-                    
+                    dispose();
+                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"Animales");
                 }
                 else if(btnCatColores.isSelected()) {
-                    
+                    dispose();
+                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"Colores");
                 }
                 else if(btnCatFrutas.isSelected()) {
-                    
+                    dispose();
+                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"Frutas");
                 }
             }
         }

@@ -4,6 +4,8 @@
  */
 package co.edu.univalle.miniproyecto1.view;
 
+import co.edu.univalle.miniproyecto1.logic.Juego;
+import co.edu.univalle.miniproyecto1.model.Jugador;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -34,24 +36,31 @@ public class VistaJuego extends JFrame {
     private JButton btnU;
     
     private String nombreJugador;
+    private String categoria;
+    private String palabraAleatoria;
     private int numeroAciertos;
     private int numeroFallos;
     
-    public VistaJuego() {
+    public VistaJuego(String nombreJugador, String categoria) {
         
         setTitle("Juego | Fuga de Letras"); // Título de la ventana
         setSize(480, 520); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
-        inicializarComponentes(); // Inicializa los componentes de la ventana
         setVisible(true);
         setLayout(null);
         
-        nombreJugador = "Anónimo";
+        this.nombreJugador = nombreJugador;
+        this.categoria = categoria;
         numeroAciertos = 0;
         numeroFallos = 0;
         
+        inicializarComponentes(); // Inicializa los componentes de la ventana
+        
+        Jugador jugador = new Jugador(nombreJugador);
+        Juego juego = new Juego(categoria);
+        palabraAleatoria = juego.getPalabra();
     }
 
     private void inicializarComponentes() {
@@ -65,7 +74,7 @@ public class VistaJuego extends JFrame {
         
         lblNombreJugador = new JLabel("Nombre: " + nombreJugador);
         lblNombreJugador.setFont(new Font("comic sans ms", Font.BOLD, 12));
-        lblNombreJugador.setBounds(20,5, 120,20);
+        lblNombreJugador.setBounds(20,5, 200,20);
         
         lblContadorAciertos = new JLabel("Aciertos: " + numeroAciertos);
         lblContadorAciertos.setFont(new Font("comic sans ms", Font.BOLD, 12));
@@ -75,7 +84,7 @@ public class VistaJuego extends JFrame {
         lblContadorFallos.setFont(new Font("comic sans ms", Font.BOLD, 12));
         lblContadorFallos.setBounds(390,5, 60,20);
         
-        lblPalabra = new JLabel("Pal_bra",SwingConstants.CENTER);
+        lblPalabra = new JLabel(palabraAleatoria,SwingConstants.CENTER);
         lblPalabra.setFont(new Font("comic sans ms", Font.PLAIN, 40));
         lblPalabra.setBounds(0,160, 480,50);
               

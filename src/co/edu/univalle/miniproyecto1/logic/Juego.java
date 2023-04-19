@@ -4,6 +4,8 @@
  */
 package co.edu.univalle.miniproyecto1.logic;
 
+import java.util.Random;
+
 
 /**
  *
@@ -26,12 +28,12 @@ public class Juego {
     
     public Juego(String categoria) {
         
-        palabrasCompletasAnimales = new String [] {"Leon", "Canguro", "Tigre", "Koala", "Perro", "Gato", "Elefante", "Ballena", "Zorro", "Cocodrilo", "Burro", "Caballo", "Serpiente", "Iguana", "Sapo"};
-        palabrasCompletasFrutas = new String [] {"Manzana", "Pera", "Uva", "Kiwi", "Arándano", "Cereza", "Aguacate", "Banano", "Piña", "Cocodrilo", "Guayaba", "Papaya", "Lulo", "Naranja", "Limón"};
+        palabrasCompletasAnimales = new String[] {"Leon", "Canguro", "Tigre", "Koala", "Perro", "Gato", "Elefante", "Ballena", "Zorro", "Cocodrilo", "Burro", "Caballo", "Serpiente", "Iguana", "Sapo"};
+        palabrasCompletasFrutas = new String[] {"Manzana", "Pera", "Uva", "Kiwi", "Arándano", "Cereza", "Aguacate", "Banano", "Piña", "Cocodrilo", "Guayaba", "Papaya", "Lulo", "Naranja", "Limón"};
         palabrasCompletasColores = new String[] {"Amarillo", "Azul", "Rojo", "Negro", "Naranja", "Verde", "Rosado", "Marrón", "Blanco", "Violeta", "Gris", "Magenta", "Cian", "Púrpura","Celeste"};
         
-        palabrasIncompletasAnimales = new String [] {"L_ón", "Cang_ro", "T_gre", "K_ala", "P_rro", "G_to", "Elef_nte", "B_llena", "Zorr_", "Coc_drilo", "Burr_", "Cab_llo", "Serp_ente", "Ig_ana", "S_po"};
-        palabrasIncompletasFrutas = new String [] {"Manz_na", "P_ra", "Uv_", "Kiw_", "Aránd_no", "C_reza", "Aguac_te", "Banan_", "P_ña", "M_lón", "Guayaba", "Pap_ya", "L_lo", "N_ranja", "L_món"};
+        palabrasIncompletasAnimales = new String[] {"L_ón", "Cang_ro", "T_gre", "K_ala", "P_rro", "G_to", "Elef_nte", "B_llena", "Zorr_", "Coc_drilo", "Burr_", "Cab_llo", "Serp_ente", "Ig_ana", "S_po"};
+        palabrasIncompletasFrutas = new String[] {"Manz_na", "P_ra", "Uv_", "Kiw_", "Aránd_no", "C_reza", "Aguac_te", "Banan_", "P_ña", "M_lón", "Guayaba", "Pap_ya", "L_lo", "N_ranja", "L_món"};
         palabrasIncompletasColores = new String[] {"Amarill_", "Az_l", "R_jo", "N_gro", "Nar_nja", "V_rde", "R_sado", "M_rrón", "Blanc_", "Vi_leta", "Gr_s", "Mag_nta", "Ci_n", "Púrp_ra","Celest_"};
         
         this.categoria = categoria;
@@ -40,11 +42,11 @@ public class Juego {
         indiceTemporal = 0;
     }
     
-    public String getPalabra(String categoria) {
-        int min = 0;
-        int max = 14;
+    public String getPalabra() {
         
-        indiceTemporal = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        Random numeroAleatorio = new Random();
+        
+        indiceTemporal = numeroAleatorio.nextInt(15);
         
         if(categoria.toLowerCase() == "animales") {
             return palabrasIncompletasAnimales[indiceTemporal];
@@ -68,7 +70,7 @@ public class Juego {
             palabraPorComparar = palabrasIncompletasAnimales[indiceTemporal];
             palabraPorComparar.replace('_', vocal);
             
-            if(palabraPorComparar == palabrasCompletasAnimales[indiceTemporal]) {
+            if(palabraPorComparar.toLowerCase() == palabrasCompletasAnimales[indiceTemporal].toLowerCase()) {
                 numeroAciertos += 1;
                 return true;
             }
@@ -81,7 +83,7 @@ public class Juego {
             palabraPorComparar = palabrasIncompletasFrutas[indiceTemporal];
             palabraPorComparar.replace('_', vocal);
             
-            if(palabraPorComparar == palabrasCompletasFrutas[indiceTemporal]) {
+            if(palabraPorComparar.toLowerCase() == palabrasCompletasFrutas[indiceTemporal].toLowerCase()) {
                 numeroAciertos += 1;
                 return true;
             }
@@ -93,7 +95,7 @@ public class Juego {
         else if(categoria.toLowerCase() == "colores") {
             palabraPorComparar = palabrasIncompletasColores[indiceTemporal];
             palabraPorComparar.replace('_', vocal);
-            if(palabraPorComparar == palabrasCompletasColores[indiceTemporal]) {
+            if(palabraPorComparar.toLowerCase() == palabrasCompletasColores[indiceTemporal].toLowerCase()) {
                 numeroAciertos += 1;
                 return true;
             }
