@@ -21,6 +21,7 @@ public class Juego {
     
     private int numeroAciertos;
     private int numeroFallos;
+    private int indiceTemporal;
     private String categoria;
     
     public Juego(String categoria) {
@@ -36,5 +37,67 @@ public class Juego {
         this.categoria = categoria;
         numeroAciertos = 0;
         numeroFallos = 0;
+        indiceTemporal = 0;
+    }
+    
+    public String getPalabra(String categoria) {
+        int min = 0;
+        int max = 14;
+        
+        indiceTemporal = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        
+        if(categoria.toLowerCase() == "animales") {
+            return palabrasIncompletasAnimales[indiceTemporal];
+        }
+        else if(categoria.toLowerCase() == "frutas") {
+            return palabrasIncompletasFrutas[indiceTemporal];
+        }
+        else if(categoria.toLowerCase() == "colores") {
+            return palabrasIncompletasColores[indiceTemporal];
+        }
+        else {
+            return "";
+        }
+    }
+    
+    public boolean verificarPalabra(char vocal) {
+        
+        String palabraPorComparar;
+        
+        if(categoria.toLowerCase() == "animales") {
+            palabraPorComparar = palabrasIncompletasAnimales[indiceTemporal];
+            palabraPorComparar.replace('_', vocal);
+            
+            if(palabraPorComparar == palabrasCompletasAnimales[indiceTemporal]) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if(categoria.toLowerCase() == "frutas") {
+            palabraPorComparar = palabrasIncompletasFrutas[indiceTemporal];
+            palabraPorComparar.replace('_', vocal);
+            
+            if(palabraPorComparar == palabrasCompletasFrutas[indiceTemporal]) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if(categoria.toLowerCase() == "colores") {
+            palabraPorComparar = palabrasIncompletasColores[indiceTemporal];
+            palabraPorComparar.replace('_', vocal);
+            if(palabraPorComparar == palabrasCompletasColores[indiceTemporal]) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
     }
 }
