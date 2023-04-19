@@ -6,40 +6,56 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VistaInicio extends JFrame {
-
-    private JLabel lblIntro;
+    private JPanel jpContenido;
+    private JLabel jlMensaje;
     private JButton btnJugar;
     private JButton btnInstrucciones;
 
     public VistaInicio() {
-        setTitle("Juego | Fuga de Letras"); // Título de la ventana
-        setSize(800, 600); // Tamaño de la ventana
-        setLocationRelativeTo(null); // Centra la ventana en la pantalla
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
         inicializarComponentes(); // Inicializa los componentes de la ventana
-        setVisible(true);
     }
 
     private void inicializarComponentes() {
+        setTitle("Juego | Fuga de Letras"); // Título de la ventana
+        setSize(600,530); // Tamaño de la ventana
+        setLocationRelativeTo(null); // Centra la ventana en la pantalla
+        setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
+        setVisible(true);
+        setResizable(false);
+        setLayout(null);
         
-        lblIntro = new JLabel("Una vocal se ha fugado de la palabra ¿Nos ayudas a encontrarla?",SwingConstants.CENTER);
-        lblIntro.setFont(new Font("Arial", Font.BOLD, 18)); // Establece el tamaño y tipo de fuente del título
-
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
+        jpContenido = new JPanel();
+        
+        jlMensaje = new JLabel("BIENVENIDO A FUGA DE LETRAS",SwingConstants.CENTER);
+        
+        jpContenido.setSize(600,515);        
+        jpContenido.setBounds(0,130, 600, 515);
+        jpContenido.setLayout(null);
+        
+        add(jpContenido);
+        
+        jlMensaje.setBounds(0,0, 600,20);
+        jlMensaje.setForeground(Color.GRAY);
+        jlMensaje.setFont(new Font("arial", Font.BOLD, 20));
         
         btnJugar = new JButton("Jugar");
+        btnJugar.setBounds(180,270, 150,35);
         btnJugar.addActionListener(manejadorDeEventos);
+        
+        jpContenido.add(jlMensaje);
+        jpContenido.add(btnJugar);
 
-        btnInstrucciones = new JButton("Instrucciones");
-        btnInstrucciones.addActionListener(manejadorDeEventos);
+        //btnInstrucciones = new JButton("Instrucciones");
+        //btnInstrucciones.addActionListener(manejadorDeEventos);
 
-        JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new FlowLayout(FlowLayout.CENTER)); // Alinea los botones a la derecha del panel
-        panelBotones.add(btnJugar);
-        panelBotones.add(btnInstrucciones);
+        //JPanel panelBotones = new JPanel();
+       // panelBotones.setLayout(new FlowLayout(FlowLayout.CENTER)); // Alinea los botones a la derecha del panel
+        //panelBotones.add(btnJugar);
+        //panelBotones.add(btnInstrucciones);
 
-        add(lblIntro, BorderLayout.NORTH); // Añade el título en la parte superior de la ventana
-        add(panelBotones, BorderLayout.CENTER); // Añade los botones en la parte central de la ventana   
+        //add(jlMensaje, BorderLayout.NORTH); // Añade el título en la parte superior de la ventana
+        //add(panelBotones, BorderLayout.CENTER); // Añade los botones en la parte central de la ventana   
     }
     
     class ManejadorDeEventos implements ActionListener {
