@@ -19,16 +19,15 @@ public class VistaInstrucciones extends JFrame {
     private JLabel lblInstrucciones;
     private JButton btnJugar;
     private JButton btnVolver;
-    private Container mainContainer;
     
     public VistaInstrucciones() {
         
-        setTitle("Juego | Fuga de Letras"); // Título de la ventana
-        setSize(480, 520); // Tamaño de la ventana
-        setLocationRelativeTo(null); // Centra la ventana en la pantalla
+        setTitle("Juego | Fuga de Letras");
+        setSize(480, 520);
+        setLocationRelativeTo(null);
         setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
-        inicializarComponentes(); // Inicializa los componentes de la ventana
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        inicializarComponentes();
         setVisible(true);
         setLayout(null);
     }
@@ -39,13 +38,14 @@ public class VistaInstrucciones extends JFrame {
         jpContenido.setSize(480,520);        
         jpContenido.setBounds(0,0, 480, 520);
         jpContenido.setLayout(null);
+        jpContenido.setBackground(Color.LIGHT_GRAY);
         
         add(jpContenido);
         
         lblInstrucciones = new JLabel("Texto de instrucciones",SwingConstants.CENTER);
         lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 20));
         lblInstrucciones.setBounds(0,0,480,300);
-        lblInstrucciones.setForeground(Color.GRAY);
+        lblInstrucciones.setForeground(Color.DARK_GRAY);
         
         
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();

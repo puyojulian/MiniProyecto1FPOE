@@ -34,6 +34,7 @@ public class VistaParametros extends JFrame{
     private JPanel mainPanel;
 
     public VistaParametros() {
+        
         setTitle("Juego | Fuga de Letras"); // Título de la ventana
         setSize(480, 520); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
@@ -50,6 +51,7 @@ public class VistaParametros extends JFrame{
         mainPanel.setSize(480, 580);
         mainPanel.setBounds(0,0,480,580);
         mainPanel.setLayout(null);
+        mainPanel.setBackground(Color.LIGHT_GRAY);
         
         add(mainPanel);
         
@@ -59,7 +61,8 @@ public class VistaParametros extends JFrame{
    
         txtNombre = new JTextField();
         txtNombre.setHorizontalAlignment(JTextField.CENTER);
-        txtNombre.setForeground(Color.GRAY);
+        txtNombre.setForeground(Color.CYAN);
+        txtNombre.setBackground(Color.GRAY);
         txtNombre.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         txtNombre.setBounds(90,150, 300,30);
         
@@ -104,20 +107,20 @@ public class VistaParametros extends JFrame{
         public void actionPerformed(ActionEvent evento) {
             if(evento.getSource() == btnConfirmar) {                
                 dispose(); 
-                VistaParametros ventanaParametros = new VistaParametros();
+                VistaJuego vistaJuego = new VistaJuego();
             }
-            else if(evento.getSource() == btnConfirmar) {
-                dispose(); 
-                VistaInicio ventanaInicio = new VistaInicio();
-            }
-            else if(evento.getSource() == btnConfirmar) {                
-                dispose(); 
-                VistaParametros ventanaParametros = new VistaParametros();
-            }
-            else if(evento.getSource() == btnConfirmar) {
-                dispose(); 
-                VistaInicio ventanaInicio = new VistaInicio();
-            }
+//            else if(evento.getSource() == btnConfirmar) {
+//                dispose(); 
+//                VistaInicio ventanaInicio = new VistaInicio();
+//            }
+//            else if(evento.getSource() == btnConfirmar) {                
+//                dispose(); 
+//                VistaParametros ventanaParametros = new VistaParametros();
+//            }
+//            else if(evento.getSource() == btnConfirmar) {
+//                dispose(); 
+//                VistaInicio ventanaInicio = new VistaInicio();
+//            }
         }
     }
 }

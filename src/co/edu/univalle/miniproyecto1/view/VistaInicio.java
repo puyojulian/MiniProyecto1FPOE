@@ -13,13 +13,13 @@ public class VistaInicio extends JFrame {
 
     public VistaInicio() {
 
-        setTitle("Juego | Fuga de Letras"); // Título de la ventana
-        setSize(480, 520); // Tamaño de la ventana
-        setLocationRelativeTo(null); // Centra la ventana en la pantalla
+        setTitle("Juego | Fuga de Letras");
+        setSize(480, 520);
+        setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
-        inicializarComponentes(); // Inicializa los componentes de la ventana
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        inicializarComponentes();
         setLayout(null);
     }
 
@@ -31,13 +31,14 @@ public class VistaInicio extends JFrame {
         jpContenido.setSize(480,520);        
         jpContenido.setBounds(0,0, 480, 520);
         jpContenido.setLayout(null);
+        jpContenido.setBackground(Color.LIGHT_GRAY);
         
         add(jpContenido);
         
         lblIntro = new JLabel("BIENVENIDO A FUGA DE LETRAS",SwingConstants.CENTER);
         lblIntro.setFont(new Font("comic sans ms", Font.BOLD, 20));
-        lblIntro.setBounds(0,40, 480,20);
-        lblIntro.setForeground(Color.GRAY);
+        lblIntro.setBounds(0,40, 470,20);
+        lblIntro.setForeground(Color.DARK_GRAY);
                             
         btnJugar = new JButton("Jugar");
         btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
