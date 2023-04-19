@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
  */
 public class VistaInstrucciones extends JFrame {
     
+    private JPanel jpContenido;
     private JLabel lblInstrucciones;
     private JButton btnJugar;
     private JButton btnVolver;
@@ -29,34 +30,39 @@ public class VistaInstrucciones extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
         inicializarComponentes(); // Inicializa los componentes de la ventana
         setVisible(true);
+        setLayout(null);
     }
     
     private void inicializarComponentes() {
         
-        getContentPane().setLayout(null);
+        jpContenido = new JPanel();
+        jpContenido.setSize(480,520);        
+        jpContenido.setBounds(0,0, 480, 520);
+        jpContenido.setLayout(null);
         
-        lblInstrucciones = new JLabel("<HTML>Texto de instrucciones Texto de instrucciones Texto de instrucciones Texto de instrucciones Texto Inst<HTML>",SwingConstants.CENTER);
-        lblInstrucciones.setHorizontalAlignment(JLabel.CENTER);
-        lblInstrucciones.setFont(new Font("Arial", Font.BOLD, 16)); // Establece el tamaño y tipo de fuente del título
-        lblInstrucciones.setSize(240,100);
-        lblInstrucciones.setBounds(10,100,400,100);
-
+        add(jpContenido);
+        
+        lblInstrucciones = new JLabel("Texto de instrucciones",SwingConstants.CENTER);
+        lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        lblInstrucciones.setBounds(0,0,480,300);
+        lblInstrucciones.setForeground(Color.GRAY);
+        
+        
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
         
         btnJugar = new JButton("Jugar");
-        btnJugar.setBounds(190,300,100,40);
+        btnJugar.setBounds(160,270, 150,50);
+        btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnVolver = new JButton("Volver");
         btnVolver.addActionListener(manejadorDeEventos);
-        btnVolver.setBounds(190,380,100,40);
+        btnVolver.setFont(new Font("comic sans ms", Font.PLAIN, 16));
+        btnVolver.setBounds(160,330, 150,50);
         
-        add(lblInstrucciones);
-        add(btnJugar);
-        add(btnVolver);
-        
-        
-        
+        jpContenido.add(lblInstrucciones);
+        jpContenido.add(btnJugar);
+        jpContenido.add(btnVolver);   
     }
 
     private class ManejadorDeEventos implements ActionListener {

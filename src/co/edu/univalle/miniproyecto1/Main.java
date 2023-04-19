@@ -5,6 +5,8 @@
 package co.edu.univalle.miniproyecto1;
 
 import co.edu.univalle.miniproyecto1.view.VistaInicio;
+import java.awt.GraphicsEnvironment;
+import java.util.Arrays;
 
 /**
  *
@@ -12,7 +14,9 @@ import co.edu.univalle.miniproyecto1.view.VistaInicio;
  */
 public class Main {
     public static void main(String[] args) {
-        VistaInicio ventana = new VistaInicio(); // Crea un objeto de la clase Ventana
-         // Muestra la ventana
+        VistaInicio ventana = new VistaInicio(); 
+        
+        String[] fontNames=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        System.out.println(Arrays.toString(fontNames));
     }
 }

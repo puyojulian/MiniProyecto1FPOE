@@ -7,14 +7,14 @@ import java.awt.event.ActionListener;
 
 public class VistaInicio extends JFrame {
     private JPanel jpContenido;
-    private JLabel jlMensaje;
+    private JLabel lblIntro;
     private JButton btnJugar;
     private JButton btnInstrucciones;
 
     public VistaInicio() {
 
         setTitle("Juego | Fuga de Letras"); // Título de la ventana
-        setSize(480, 620); // Tamaño de la ventana
+        setSize(480, 520); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
         setResizable(false);
         setVisible(true);
@@ -26,27 +26,30 @@ public class VistaInicio extends JFrame {
     private void inicializarComponentes() {
         
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
+        
         jpContenido = new JPanel();
-        jpContenido.setSize(480,620);        
-        jpContenido.setBounds(0,0, 480, 620);
+        jpContenido.setSize(480,520);        
+        jpContenido.setBounds(0,0, 480, 520);
         jpContenido.setLayout(null);
         
         add(jpContenido);
         
-        jlMensaje = new JLabel("BIENVENIDO A FUGA DE LETRAS",SwingConstants.CENTER);
-        jlMensaje.setFont(new Font("arial", Font.BOLD, 20));
-        jlMensaje.setBounds(0,10, 480,20);
-        jlMensaje.setForeground(Color.GRAY);
+        lblIntro = new JLabel("BIENVENIDO A FUGA DE LETRAS",SwingConstants.CENTER);
+        lblIntro.setFont(new Font("comic sans ms", Font.BOLD, 20));
+        lblIntro.setBounds(0,40, 480,20);
+        lblIntro.setForeground(Color.GRAY);
                             
         btnJugar = new JButton("Jugar");
-        btnJugar.setBounds(165,270, 150,35);
+        btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
+        btnJugar.setBounds(160,270, 150,50);
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnInstrucciones = new JButton("Instrucciones");
-        btnInstrucciones.setBounds(165,320, 150,35);
+        btnInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 16));
+        btnInstrucciones.setBounds(160,330, 150,50);
         btnInstrucciones.addActionListener(manejadorDeEventos);
         
-        jpContenido.add(jlMensaje);
+        jpContenido.add(lblIntro);
         jpContenido.add(btnJugar);
         jpContenido.add(btnInstrucciones);
     }
