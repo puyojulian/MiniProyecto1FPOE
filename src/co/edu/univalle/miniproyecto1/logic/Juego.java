@@ -69,9 +69,11 @@ public class Juego {
             palabraPorComparar.replace('_', vocal);
             
             if(palabraPorComparar == palabrasCompletasAnimales[indiceTemporal]) {
+                numeroAciertos += 1;
                 return true;
             }
             else {
+                numeroFallos += 1;
                 return false;
             }
         }
@@ -80,9 +82,11 @@ public class Juego {
             palabraPorComparar.replace('_', vocal);
             
             if(palabraPorComparar == palabrasCompletasFrutas[indiceTemporal]) {
+                numeroAciertos += 1;
                 return true;
             }
             else {
+                numeroFallos += 1;
                 return false;
             }
         }
@@ -90,14 +94,24 @@ public class Juego {
             palabraPorComparar = palabrasIncompletasColores[indiceTemporal];
             palabraPorComparar.replace('_', vocal);
             if(palabraPorComparar == palabrasCompletasColores[indiceTemporal]) {
+                numeroAciertos += 1;
                 return true;
             }
             else {
+                numeroFallos += 1;
                 return false;
             }
         }
         else {
             return false;
         }
+    }
+
+    public int getNumeroAciertos() {
+        return numeroAciertos;
+    }
+
+    public int getNumeroFallos() {
+        return numeroFallos;
     }
 }
