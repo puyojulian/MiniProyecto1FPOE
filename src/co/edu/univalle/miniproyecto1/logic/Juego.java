@@ -28,12 +28,12 @@ public class Juego {
     
     public Juego(String categoria) {
         
-        palabrasCompletasAnimales = new String[] {"Leon", "Canguro", "Tigre", "Koala", "Perro", "Gato", "Elefante", "Ballena", "Zorro", "Cocodrilo", "Burro", "Caballo", "Serpiente", "Iguana", "Sapo"};
-        palabrasCompletasFrutas = new String[] {"Manzana", "Pera", "Uva", "Kiwi", "Arándano", "Cereza", "Aguacate", "Banano", "Piña", "Cocodrilo", "Guayaba", "Papaya", "Lulo", "Naranja", "Limón"};
+        palabrasCompletasAnimales = new String[] {"León", "Canguro", "Tigre", "Koala", "Perro", "Gato", "Elefante", "Ballena", "Zorro", "Cocodrilo", "Burro", "Caballo", "Serpiente", "Iguana", "Sapo"};
+        palabrasCompletasFrutas = new String[] {"Manzana", "Pera", "Uva", "Kiwi", "Arándano", "Cereza", "Aguacate", "Banano", "Piña", "Melón", "Guayaba", "Papaya", "Lulo", "Naranja", "Limón"};
         palabrasCompletasColores = new String[] {"Amarillo", "Azul", "Rojo", "Negro", "Naranja", "Verde", "Rosado", "Marrón", "Blanco", "Violeta", "Gris", "Magenta", "Cian", "Púrpura","Celeste"};
         
         palabrasIncompletasAnimales = new String[] {"L_ón", "Cang_ro", "T_gre", "K_ala", "P_rro", "G_to", "Elef_nte", "B_llena", "Zorr_", "Coc_drilo", "Burr_", "Cab_llo", "Serp_ente", "Ig_ana", "S_po"};
-        palabrasIncompletasFrutas = new String[] {"Manz_na", "P_ra", "Uv_", "Kiw_", "Aránd_no", "C_reza", "Aguac_te", "Banan_", "P_ña", "M_lón", "Guayaba", "Pap_ya", "L_lo", "N_ranja", "L_món"};
+        palabrasIncompletasFrutas = new String[] {"Manz_na", "P_ra", "Uv_", "Kiw_", "Aránd_no", "C_reza", "Aguac_te", "Banan_", "P_ña", "M_lón", "Gu_yaba", "Pap_ya", "L_lo", "N_ranja", "L_món"};
         palabrasIncompletasColores = new String[] {"Amarill_", "Az_l", "R_jo", "N_gro", "Nar_nja", "V_rde", "R_sado", "M_rrón", "Blanc_", "Vi_leta", "Gr_s", "Mag_nta", "Ci_n", "Púrp_ra","Celest_"};
         
         this.categoria = categoria;
@@ -43,42 +43,40 @@ public class Juego {
     }
     
     public String getPalabra() {
-        String[] palabras = {"manzana", "pera", "platano", "sandia", "naranja"};
 
         Random random = new Random();
-        int indiceAleatorio = random.nextInt(palabras.length);
+        int indiceAleatorio = random.nextInt(15);
+        
+//        System.out.println(""+indiceAleatorio);
 
-        String palabraAleatoria = palabras[indiceAleatorio];
-
-        System.out.println("La palabra aleatoria es: " + palabraAleatoria);
+        indiceTemporal = indiceAleatorio;
         
-        Random numeroAleatorio = new Random();
-        
-        indiceTemporal = numeroAleatorio.nextInt(15);
-        
-        if(categoria.toLowerCase() == "animales") {
+        if(categoria == "animales") {
+//            System.out.println(palabrasIncompletasAnimales[indiceTemporal]);
             return palabrasIncompletasAnimales[indiceTemporal];
         }
-        else if(categoria.toLowerCase() == "frutas") {
+        else if(categoria == "frutas") {
+//            System.out.println(palabrasIncompletasFrutas[indiceTemporal]);
             return palabrasIncompletasFrutas[indiceTemporal];
         }
-        else if(categoria.toLowerCase() == "colores") {
+        else if(categoria == "colores") {
+//            System.out.println(palabrasIncompletasColores[indiceTemporal]);
             return palabrasIncompletasColores[indiceTemporal];
         }
-        else {
-            return "";
-        }
+        return null;
     }
     
     public boolean verificarPalabra(char vocal) {
         
         String palabraPorComparar;
         
-        if(categoria.toLowerCase() == "animales") {
+        if(categoria == "animales") {
             palabraPorComparar = palabrasIncompletasAnimales[indiceTemporal];
-            palabraPorComparar.replace('_', vocal);
+            String replace = palabraPorComparar.replace('_', vocal);
+//            System.out.println("Vocal: " + vocal + " en la categoría " + categoria + ": " + palabrasCompletasAnimales[indiceTemporal] +" = "+ replace);
+//            System.out.println(""+(palabrasCompletasColores[indiceTemporal].equals(replace)));
             
-            if(palabraPorComparar.toLowerCase() == palabrasCompletasAnimales[indiceTemporal].toLowerCase()) {
+            if(palabrasCompletasAnimales[indiceTemporal].equals(replace)) {
                 numeroAciertos += 1;
                 return true;
             }
@@ -87,11 +85,13 @@ public class Juego {
                 return false;
             }
         }
-        else if(categoria.toLowerCase() == "frutas") {
+        else if(categoria == "frutas") {
             palabraPorComparar = palabrasIncompletasFrutas[indiceTemporal];
-            palabraPorComparar.replace('_', vocal);
+            String replace = palabraPorComparar.replace('_', vocal);
+//            System.out.println("Vocal: " + vocal + " en la categoría " + categoria + ": " + palabrasCompletasFrutas[indiceTemporal] +" = "+ replace);
+//            System.out.println(""+(palabrasCompletasColores[indiceTemporal].equals(replace)));
             
-            if(palabraPorComparar.toLowerCase() == palabrasCompletasFrutas[indiceTemporal].toLowerCase()) {
+            if(palabrasCompletasFrutas[indiceTemporal].equals(replace)) {
                 numeroAciertos += 1;
                 return true;
             }
@@ -100,10 +100,13 @@ public class Juego {
                 return false;
             }
         }
-        else if(categoria.toLowerCase() == "colores") {
+        else if(categoria == "colores") {
             palabraPorComparar = palabrasIncompletasColores[indiceTemporal];
-            palabraPorComparar.replace('_', vocal);
-            if(palabraPorComparar.toLowerCase() == palabrasCompletasColores[indiceTemporal].toLowerCase()) {
+            String replace = palabraPorComparar.replace('_', vocal);
+//            System.out.println("Vocal: " + vocal + " en la categoría " + categoria + ": " + palabrasCompletasColores[indiceTemporal] +" = "+ replace);
+//            System.out.println(""+(palabrasCompletasColores[indiceTemporal].equals(replace)));
+            
+            if(palabrasCompletasColores[indiceTemporal].equals(replace)) {
                 numeroAciertos += 1;
                 return true;
             }

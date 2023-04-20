@@ -124,15 +124,15 @@ public class VistaParametros extends JFrame{
             if(evento.getSource() == btnConfirmar) {
                 if(btnCatAnimales.isSelected()) {
                     dispose();
-                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"Animales");
+                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"animales");
                 }
                 else if(btnCatColores.isSelected()) {
                     dispose();
-                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"Colores");
+                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"colores");
                 }
                 else if(btnCatFrutas.isSelected()) {
                     dispose();
-                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"Frutas");
+                    VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"frutas");
                 }
             }
         }

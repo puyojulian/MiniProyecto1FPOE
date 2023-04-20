@@ -24,6 +24,8 @@ public class VistaJuego extends JFrame {
     
     private JPanel jpContenido;
     
+    private static Juego juego;
+    
     private JLabel lblPalabra;
     private JLabel lblNombreJugador;
     private JLabel lblContadorAciertos;
@@ -56,14 +58,14 @@ public class VistaJuego extends JFrame {
         numeroAciertos = 0;
         numeroFallos = 0;
         
-        inicializarComponentes(); // Inicializa los componentes de la ventana
-        
         Jugador jugador = new Jugador(nombreJugador);
-        Juego juego = new Juego(categoria);
+        juego = new Juego(categoria);
         palabraAleatoria = juego.getPalabra();
+        
+        inicializarComponentes(juego);
     }
 
-    private void inicializarComponentes() {
+    private void inicializarComponentes(Juego juego) {
         jpContenido = new JPanel();
         jpContenido.setSize(480, 580);
         jpContenido.setBounds(0,0,480,580);
@@ -86,9 +88,9 @@ public class VistaJuego extends JFrame {
         
         lblPalabra = new JLabel(palabraAleatoria,SwingConstants.CENTER);
         lblPalabra.setFont(new Font("comic sans ms", Font.PLAIN, 40));
-        lblPalabra.setBounds(0,160, 480,50);
+        lblPalabra.setBounds(0,160, 480,80);
               
-        ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
+        ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos(juego);
         
         btnA = new JButton("a");
         btnA.setBounds(90,300, 50,50);
@@ -127,23 +129,88 @@ public class VistaJuego extends JFrame {
     }
     
     private class ManejadorDeEventos implements ActionListener {
+        private Juego juego;       
+        
+        public ManejadorDeEventos(Juego juego) {
+            this.juego = juego;
+        }
 
         @Override
-        public void actionPerformed(ActionEvent evento) {
-            if(evento.getSource() == btnA) {                
-                
+        public void actionPerformed(ActionEvent evento) {            
+            if(evento.getSource() == btnA) {
+                if(juego.verificarPalabra('a')) {
+                    lblPalabra.setText(juego.getPalabra());
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
+                else {
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
             }
             else if(evento.getSource() == btnE) {
-
+                if(juego.verificarPalabra('e')) {
+                    lblPalabra.setText(juego.getPalabra());
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
+                else {
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
             }
-            else if(evento.getSource() == btnI) {                
-
+            else if(evento.getSource() == btnI) {
+                if(juego.verificarPalabra('i')) {
+                    lblPalabra.setText(juego.getPalabra());
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
+                else {
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
             }
             else if(evento.getSource() == btnO) {
-
+                if(juego.verificarPalabra('o')) {
+                    lblPalabra.setText(juego.getPalabra());
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
+                else {
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
             }
             else if(evento.getSource() == btnU) {
-
+                if(juego.verificarPalabra('u')) {
+                    lblPalabra.setText(juego.getPalabra());
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
+                else {
+                    numeroAciertos = juego.getNumeroAciertos();
+                    numeroFallos = juego.getNumeroFallos();
+                    lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
+                    lblContadorFallos.setText("Fallos: " + numeroFallos);
+                }
             }
         }
     }
