@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class VistaInicio extends JFrame {
     private JPanel jpContenido;
     private JLabel lblIntro;
+    private JLabel lblIntro2;
     private JButton btnJugar;
     private JButton btnInstrucciones;
 
@@ -31,26 +32,36 @@ public class VistaInicio extends JFrame {
         jpContenido.setSize(480,520);        
         jpContenido.setBounds(0,0, 480, 520);
         jpContenido.setLayout(null);
-        jpContenido.setBackground(Color.LIGHT_GRAY);
+        jpContenido.setBackground(Color.DARK_GRAY);
         
         add(jpContenido);
         
-        lblIntro = new JLabel("<html><p style=width:300px>" + "Una vocal se ha fugado de la palabra ¿Nos ayudas a encontrarla?" + "</p></html>",SwingConstants.CENTER);
-        lblIntro.setFont(new Font("comic sans ms", Font.PLAIN, 30));
-        lblIntro.setBounds(10,80, 470,140);
-        lblIntro.setForeground(Color.DARK_GRAY);
+        lblIntro = new JLabel("Una vocal se ha fugado de la palabra",SwingConstants.CENTER);
+        lblIntro.setFont(new Font("comic sans ms", Font.BOLD, 22));
+        lblIntro.setBounds(0,100, 470,30);
+        lblIntro.setForeground(Color.WHITE);
+        
+        lblIntro2 = new JLabel("¿Nos ayudas a encontrarla?",SwingConstants.CENTER);
+        lblIntro2.setFont(new Font("comic sans ms", Font.BOLD, 26));
+        lblIntro2.setBounds(0,160, 470,40);
+        lblIntro2.setForeground(Color.CYAN);
                             
         btnJugar = new JButton("Jugar");
         btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnJugar.setBounds(160,270, 150,50);
+        btnJugar.setForeground(Color.DARK_GRAY);
+        btnJugar.setBackground(Color.ORANGE);
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnInstrucciones = new JButton("Instrucciones");
         btnInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnInstrucciones.setBounds(160,330, 150,50);
+        btnInstrucciones.setForeground(Color.DARK_GRAY);
+        btnInstrucciones.setBackground(Color.LIGHT_GRAY);
         btnInstrucciones.addActionListener(manejadorDeEventos);
         
         jpContenido.add(lblIntro);
+        jpContenido.add(lblIntro2);
         jpContenido.add(btnJugar);
         jpContenido.add(btnInstrucciones);
     }

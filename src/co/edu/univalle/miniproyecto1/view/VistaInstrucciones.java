@@ -42,7 +42,7 @@ public class VistaInstrucciones extends JFrame {
         
         add(jpContenido);
         
-        lblInstrucciones = new JLabel("<html><p style=\"width:200px\">" + "A la palabra que te damos le falta una vocal, presiónala." + "</p></html>",SwingConstants.CENTER);
+        lblInstrucciones = new JLabel("<html><p style=width:200px>" + "A la palabra que te damos le falta una vocal, presiónala." + "</p></html>",SwingConstants.CENTER);
         lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 20));
         lblInstrucciones.setBounds(0,0,480,300);
         lblInstrucciones.setForeground(Color.DARK_GRAY);

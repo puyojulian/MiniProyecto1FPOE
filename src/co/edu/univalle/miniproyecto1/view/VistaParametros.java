@@ -56,8 +56,8 @@ public class VistaParametros extends JFrame{
         add(jpContenido);
         
         lblNombre = new JLabel("Escribe tu nombre",SwingConstants.CENTER);
-        lblNombre.setFont(new Font("comic sans ms", Font.PLAIN, 20));
-        lblNombre.setBounds(0,100, 480,20);
+        lblNombre.setFont(new Font("comic sans ms", Font.PLAIN, 22));
+        lblNombre.setBounds(0,100, 480,30);
    
         txtNombre = new JTextField();
         txtNombre.setHorizontalAlignment(JTextField.CENTER);
@@ -67,7 +67,7 @@ public class VistaParametros extends JFrame{
         txtNombre.setBounds(90,150, 300,30);
         
         lblCategoria = new JLabel("Escoje tu categoria",SwingConstants.CENTER);
-        lblCategoria.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        lblCategoria.setFont(new Font("comic sans ms", Font.PLAIN, 22));
         lblCategoria.setBounds(0,250, 480,30);
         
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
@@ -90,6 +90,7 @@ public class VistaParametros extends JFrame{
         btnConfirmar = new JButton("Confirmar");
         btnConfirmar.setBounds(180,370, 120,35);
         btnConfirmar.setFont(new Font("comic sans ms", Font.PLAIN, 14));
+        btnConfirmar.setBackground(Color.pink);
         btnConfirmar.addActionListener(manejadorDeEventos);
         
         jpContenido.add(lblNombre);

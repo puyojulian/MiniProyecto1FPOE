@@ -84,14 +84,17 @@ public class VistaJuego extends JFrame {
         
         lblNombreJugador = new JLabel("Nombre: " + nombreJugador);
         lblNombreJugador.setFont(new Font("comic sans ms", Font.BOLD, 12));
+        lblNombreJugador.setForeground(Color.DARK_GRAY);
         lblNombreJugador.setBounds(20,5, 200,20);
         
         lblContadorAciertos = new JLabel("Aciertos: " + numeroAciertos);
         lblContadorAciertos.setFont(new Font("comic sans ms", Font.BOLD, 12));
+        lblContadorAciertos.setForeground(Color.DARK_GRAY);
         lblContadorAciertos.setBounds(290,5, 80,20);
         
         lblContadorFallos = new JLabel("Fallos: " + numeroFallos);
         lblContadorFallos.setFont(new Font("comic sans ms", Font.BOLD, 12));
+        lblContadorFallos.setForeground(Color.DARK_GRAY);
         lblContadorFallos.setBounds(390,5, 60,20);
         
         lblPalabra = new JLabel(palabraAleatoria,SwingConstants.CENTER);
@@ -103,31 +106,38 @@ public class VistaJuego extends JFrame {
         btnA = new JButton("a");
         btnA.setBounds(90,300, 50,50);
         btnA.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        btnA.setBackground(Color.orange);
         btnA.addActionListener(manejadorDeEventos);
         
         btnE = new JButton("e");
         btnE.setBounds(150,320, 50,50);
         btnE.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        btnE.setBackground(Color.cyan);
         btnE.addActionListener(manejadorDeEventos);
         
         btnI = new JButton("i");
         btnI.setBounds(210,300, 50,50);
         btnI.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        btnI.setBackground(Color.yellow);
         btnI.addActionListener(manejadorDeEventos);
         
         btnO = new JButton("o");
         btnO.setBounds(270,320, 50,50);
         btnO.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        btnO.setBackground(Color.GREEN);
         btnO.addActionListener(manejadorDeEventos);
         
         btnU = new JButton("u");
         btnU.setBounds(330,300, 50,50);
         btnU.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        btnU.setBackground(Color.pink);
         btnU.addActionListener(manejadorDeEventos);
         
         btnTerminar = new JButton("Terminar");
         btnTerminar.setBounds(355,430, 80,25);
-        btnTerminar.setFont(new Font("comic sans ms", Font.PLAIN, 8));
+        btnTerminar.setFont(new Font("comic sans ms", Font.PLAIN, 9));
+        btnTerminar.setForeground(Color.ORANGE);
+        btnTerminar.setBackground(Color.GRAY);
         btnTerminar.addActionListener(manejadorDeEventos);
         
         jpContenido.add(lblNombreJugador);
