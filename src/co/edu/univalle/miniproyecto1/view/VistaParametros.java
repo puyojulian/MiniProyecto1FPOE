@@ -17,6 +17,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
@@ -133,6 +134,12 @@ public class VistaParametros extends JFrame{
                 else if(btnCatFrutas.isSelected()) {
                     dispose();
                     VistaJuego vistaJuego = new VistaJuego(txtNombre.getText(),"frutas");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,
+                    "Selecciona una categoría.", 
+                    "Parámetro Necesario",
+                    JOptionPane.ERROR_MESSAGE);
                 }
             }
         }

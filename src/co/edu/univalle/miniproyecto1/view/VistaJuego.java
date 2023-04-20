@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -139,7 +140,8 @@ public class VistaJuego extends JFrame {
         public void actionPerformed(ActionEvent evento) {            
             if(evento.getSource() == btnA) {
                 if(juego.verificarPalabra('a')) {
-                    lblPalabra.setText(juego.getPalabra());
+                    palabraAleatoria = juego.getPalabra();
+                    lblPalabra.setText(palabraAleatoria);
                     numeroAciertos = juego.getNumeroAciertos();
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
@@ -150,11 +152,16 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    JOptionPane.showMessageDialog(null,
+                    "A la palabra " + palabraAleatoria + " no le falta la 'a'. Intenta de nuevo.", 
+                    "Vocal Errónea",
+                    JOptionPane.ERROR_MESSAGE);
                 }
             }
             else if(evento.getSource() == btnE) {
                 if(juego.verificarPalabra('e')) {
-                    lblPalabra.setText(juego.getPalabra());
+                    palabraAleatoria = juego.getPalabra();
+                    lblPalabra.setText(palabraAleatoria);
                     numeroAciertos = juego.getNumeroAciertos();
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
@@ -165,11 +172,16 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    JOptionPane.showMessageDialog(null,
+                    "A la palabra " + palabraAleatoria + " no le falta la 'e'. Intenta de nuevo.", 
+                    "Vocal Errónea",
+                    JOptionPane.ERROR_MESSAGE);
                 }
             }
             else if(evento.getSource() == btnI) {
                 if(juego.verificarPalabra('i')) {
-                    lblPalabra.setText(juego.getPalabra());
+                    palabraAleatoria = juego.getPalabra();
+                    lblPalabra.setText(palabraAleatoria);
                     numeroAciertos = juego.getNumeroAciertos();
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
@@ -180,11 +192,16 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    JOptionPane.showMessageDialog(null,
+                    "A la palabra " + palabraAleatoria + " no le falta la 'i'. Intenta de nuevo.", 
+                    "Vocal Errónea",
+                    JOptionPane.ERROR_MESSAGE);
                 }
             }
             else if(evento.getSource() == btnO) {
                 if(juego.verificarPalabra('o')) {
-                    lblPalabra.setText(juego.getPalabra());
+                    palabraAleatoria = juego.getPalabra();
+                    lblPalabra.setText(palabraAleatoria);
                     numeroAciertos = juego.getNumeroAciertos();
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
@@ -195,11 +212,16 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    JOptionPane.showMessageDialog(null,
+                    "A la palabra " + palabraAleatoria + " no le falta la 'o'. Intenta de nuevo.", 
+                    "Vocal Errónea",
+                    JOptionPane.ERROR_MESSAGE);
                 }
             }
             else if(evento.getSource() == btnU) {
                 if(juego.verificarPalabra('u')) {
-                    lblPalabra.setText(juego.getPalabra());
+                    palabraAleatoria = juego.getPalabra();
+                    lblPalabra.setText(palabraAleatoria);
                     numeroAciertos = juego.getNumeroAciertos();
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
@@ -210,6 +232,10 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    JOptionPane.showMessageDialog(null,
+                    "A la palabra " + palabraAleatoria + " no le falta la 'u'. Intenta de nuevo.", 
+                    "Vocal Errónea",
+                    JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
