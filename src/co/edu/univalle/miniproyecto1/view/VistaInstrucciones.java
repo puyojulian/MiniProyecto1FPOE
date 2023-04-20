@@ -38,14 +38,14 @@ public class VistaInstrucciones extends JFrame {
         jpContenido.setSize(480,520);        
         jpContenido.setBounds(0,0, 480, 520);
         jpContenido.setLayout(null);
-        jpContenido.setBackground(Color.lightGray);
+        jpContenido.setBackground(Color.GRAY);
         
         add(jpContenido);
         
         lblInstrucciones = new JLabel("<html><p style=width:200px>" + "A la palabra que te damos le falta una vocal, presiónala." + "</p></html>",SwingConstants.CENTER);
-        lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 20));
+        lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 30));
         lblInstrucciones.setBounds(0,0,480,300);
-        lblInstrucciones.setForeground(Color.DARK_GRAY);
+        lblInstrucciones.setForeground(Color.PINK);
         
         
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
@@ -53,11 +53,15 @@ public class VistaInstrucciones extends JFrame {
         btnJugar = new JButton("Jugar");
         btnJugar.setBounds(160,270, 150,50);
         btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
+        btnJugar.setForeground(Color.DARK_GRAY);
+        btnJugar.setBackground(Color.ORANGE);
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnVolver = new JButton("Volver");
         btnVolver.addActionListener(manejadorDeEventos);
         btnVolver.setFont(new Font("comic sans ms", Font.PLAIN, 16));
+        btnVolver.setForeground(Color.DARK_GRAY);
+        btnVolver.setBackground(Color.LIGHT_GRAY);
         btnVolver.setBounds(160,330, 150,50);
         
         jpContenido.add(lblInstrucciones);
