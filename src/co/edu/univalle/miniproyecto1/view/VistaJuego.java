@@ -27,6 +27,7 @@ public class VistaJuego extends JFrame {
     private static Juego juego;
     
     private JLabel lblPalabra;
+    private JLabel lblPalabrasMostradas;
     private JLabel lblNombreJugador;
     private JLabel lblContadorAciertos;
     private JLabel lblContadorFallos;
@@ -83,6 +84,11 @@ public class VistaJuego extends JFrame {
         lblNombreJugador.setForeground(Color.DARK_GRAY);
         lblNombreJugador.setBounds(20,5, 200,20);
         
+        lblPalabrasMostradas = new JLabel("Palabras mostradas: " + palabrasMostradas);
+        lblPalabrasMostradas.setFont(new Font("comic sans ms", Font.BOLD, 12));
+        lblPalabrasMostradas.setForeground(Color.DARK_GRAY);
+        lblPalabrasMostradas.setBounds(20,30, 250,20);
+        
         lblContadorAciertos = new JLabel("Aciertos: " + numeroAciertos);
         lblContadorAciertos.setFont(new Font("comic sans ms", Font.BOLD, 12));
         lblContadorAciertos.setForeground(Color.DARK_GRAY);
@@ -137,6 +143,7 @@ public class VistaJuego extends JFrame {
         btnTerminar.addActionListener(manejadorDeEventos);
         
         jpContenido.add(lblNombreJugador);
+        jpContenido.add(lblPalabrasMostradas);
         jpContenido.add(lblContadorAciertos);
         jpContenido.add(lblContadorFallos);
         jpContenido.add(lblPalabra);
@@ -186,6 +193,7 @@ public class VistaJuego extends JFrame {
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
                     palabrasMostradas += 1;
+                    lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -207,6 +215,7 @@ public class VistaJuego extends JFrame {
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
                     palabrasMostradas += 1;
+                    lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -228,6 +237,7 @@ public class VistaJuego extends JFrame {
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
                     palabrasMostradas += 1;
+                    lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -249,6 +259,7 @@ public class VistaJuego extends JFrame {
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
                     palabrasMostradas += 1;
+                    lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -270,6 +281,7 @@ public class VistaJuego extends JFrame {
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
                     palabrasMostradas += 1;
+                    lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
