@@ -10,8 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
- * @author julia
+ * @author julian puyo
+ * @author juan david rodriguez
  */
 public class VistaInstrucciones extends JFrame {
     
@@ -42,8 +42,8 @@ public class VistaInstrucciones extends JFrame {
         
         add(jpContenido);
         
-        lblInstrucciones = new JLabel("<html><p style=width:200px>" + "A la palabra que te damos le falta una vocal, presiónala." + "</p></html>",SwingConstants.CENTER);
-        lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 30));
+        lblInstrucciones = new JLabel("<html><center><p style=width:250px>" + "<b>INTRUCCIONES</b><hr> 1.Dale a <b>JUGAR</b><br> 2.Escribe tu nombre <br> 3.Selecciona la categoria <br> 4.¡Diviertete!" + "</p></center></html>",SwingConstants.CENTER);
+        lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 26));
         lblInstrucciones.setBounds(0,0,480,300);
         lblInstrucciones.setForeground(Color.PINK);
         

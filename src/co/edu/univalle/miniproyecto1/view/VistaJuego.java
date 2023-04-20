@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package co.edu.univalle.miniproyecto1.view;
 
 import co.edu.univalle.miniproyecto1.logic.Juego;
@@ -21,8 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 /**
- *
- * @author julia
+ * @author julian puyo
+ * @author juan david rodriguez
  */
 public class VistaJuego extends JFrame {
     
@@ -90,7 +86,7 @@ public class VistaJuego extends JFrame {
         lblContadorAciertos = new JLabel("Aciertos: " + numeroAciertos);
         lblContadorAciertos.setFont(new Font("comic sans ms", Font.BOLD, 12));
         lblContadorAciertos.setForeground(Color.DARK_GRAY);
-        lblContadorAciertos.setBounds(290,5, 80,20);
+        lblContadorAciertos.setBounds(280,5, 90,20);
         
         lblContadorFallos = new JLabel("Fallos: " + numeroFallos);
         lblContadorFallos.setFont(new Font("comic sans ms", Font.BOLD, 12));
