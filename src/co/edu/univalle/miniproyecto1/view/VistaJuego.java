@@ -13,6 +13,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -38,11 +41,14 @@ public class VistaJuego extends JFrame {
     private JButton btnO;
     private JButton btnU;
     
+    private JButton btnTerminar;
+    
     private String nombreJugador;
     private String categoria;
     private String palabraAleatoria;
     private int numeroAciertos;
     private int numeroFallos;
+    private int palabrasMostradas;
     
     public VistaJuego(String nombreJugador, String categoria) {
         
@@ -50,7 +56,7 @@ public class VistaJuego extends JFrame {
         setSize(480, 520); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
         setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite cerrar la ventana
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); // Permite cerrar la ventana
         setVisible(true);
         setLayout(null);
         
@@ -58,6 +64,7 @@ public class VistaJuego extends JFrame {
         this.categoria = categoria;
         numeroAciertos = 0;
         numeroFallos = 0;
+        palabrasMostradas = 0;
         
         Jugador jugador = new Jugador(nombreJugador);
         juego = new Juego(categoria);
@@ -118,6 +125,11 @@ public class VistaJuego extends JFrame {
         btnU.setFont(new Font("comic sans ms", Font.PLAIN, 20));
         btnU.addActionListener(manejadorDeEventos);
         
+        btnTerminar = new JButton("Terminar");
+        btnTerminar.setBounds(355,430, 80,25);
+        btnTerminar.setFont(new Font("comic sans ms", Font.PLAIN, 8));
+        btnTerminar.addActionListener(manejadorDeEventos);
+        
         jpContenido.add(lblNombreJugador);
         jpContenido.add(lblContadorAciertos);
         jpContenido.add(lblContadorFallos);
@@ -127,7 +139,28 @@ public class VistaJuego extends JFrame {
         jpContenido.add(btnI);
         jpContenido.add(btnO);
         jpContenido.add(btnU);
+        jpContenido.add(btnTerminar);
+        
+        addWindowListener(new WindowAdapter() {
+             @Override
+            public void windowClosing(WindowEvent evt) {
+                cerrarJuego();
+            }
+        });
     }
+    
+    private void cerrarJuego(){
+            int respuesta;
+            
+            respuesta = JOptionPane.showConfirmDialog(
+                    null,"¿Esta seguro que no desea terminar?", "Advertencia",
+                    JOptionPane.YES_NO_OPTION, 
+                    JOptionPane.WARNING_MESSAGE);
+            
+            if(respuesta == JOptionPane.YES_OPTION){
+                System.exit(0);
+            }
+        }
     
     private class ManejadorDeEventos implements ActionListener {
         private Juego juego;       
@@ -146,6 +179,7 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    palabrasMostradas += 1;
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -166,6 +200,7 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    palabrasMostradas += 1;
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -186,6 +221,7 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    palabrasMostradas += 1;
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -206,6 +242,7 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    palabrasMostradas += 1;
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -226,6 +263,7 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    palabrasMostradas += 1;
                 }
                 else {
                     numeroAciertos = juego.getNumeroAciertos();
@@ -238,7 +276,22 @@ public class VistaJuego extends JFrame {
                     JOptionPane.ERROR_MESSAGE);
                 }
             }
+            else if(evento.getSource() == btnTerminar) {
+                dispose();
+                
+                DecimalFormat numberFormat = new DecimalFormat("#0.0");
+                
+                double numFallos = numeroFallos;
+                double numAciertos = numeroAciertos;
+                            
+                JOptionPane.showMessageDialog(null,
+                    "ESTADISTICAS DEL JUEGO\n" + 
+                    "\nCantidad de palabras desplegadas: " + palabrasMostradas + 
+                    "\nCantidad de fallos: " + numeroFallos + " \n\tPorcentaje de fallo: " + numberFormat.format(numFallos/(numFallos+numAciertos)*100) + "%" + 
+                    "\nCantidad de aciertos: " + numeroAciertos + " \n\tPorcentaje: de acierto: " + numberFormat.format(numAciertos/(numFallos+numAciertos)*100) + "%", 
+                    "Estadísticas",
+                    JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }
-
 }
