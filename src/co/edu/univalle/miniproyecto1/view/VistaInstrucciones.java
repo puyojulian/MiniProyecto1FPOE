@@ -38,11 +38,11 @@ public class VistaInstrucciones extends JFrame {
         jpContenido.setSize(480,520);        
         jpContenido.setBounds(0,0, 480, 520);
         jpContenido.setLayout(null);
-        jpContenido.setBackground(Color.LIGHT_GRAY);
+        jpContenido.setBackground(Color.lightGray);
         
         add(jpContenido);
         
-        lblInstrucciones = new JLabel("Texto de instrucciones",SwingConstants.CENTER);
+        lblInstrucciones = new JLabel("<html><p style=\"width:200px\">" + "A la palabra que te damos le falta una vocal, presiónala." + "</p></html>",SwingConstants.CENTER);
         lblInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 20));
         lblInstrucciones.setBounds(0,0,480,300);
         lblInstrucciones.setForeground(Color.DARK_GRAY);

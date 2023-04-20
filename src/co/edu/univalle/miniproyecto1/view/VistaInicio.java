@@ -35,9 +35,9 @@ public class VistaInicio extends JFrame {
         
         add(jpContenido);
         
-        lblIntro = new JLabel("BIENVENIDO A FUGA DE LETRAS",SwingConstants.CENTER);
-        lblIntro.setFont(new Font("comic sans ms", Font.BOLD, 20));
-        lblIntro.setBounds(0,80, 470,20);
+        lblIntro = new JLabel("<html><p style=width:300px>" + "Una vocal se ha fugado de la palabra ¿Nos ayudas a encontrarla?" + "</p></html>",SwingConstants.CENTER);
+        lblIntro.setFont(new Font("comic sans ms", Font.PLAIN, 30));
+        lblIntro.setBounds(10,80, 470,140);
         lblIntro.setForeground(Color.DARK_GRAY);
                             
         btnJugar = new JButton("Jugar");
