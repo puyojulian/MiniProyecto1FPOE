@@ -50,7 +50,7 @@ public class VistaInicio extends JFrame {
         btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnJugar.setBounds(160,270, 150,50);
         btnJugar.setForeground(Color.DARK_GRAY);
-        btnJugar.setBackground(Color.ORANGE);
+        btnJugar.setBackground(new Color(124,168,233));
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnInstrucciones = new JButton("Instrucciones");
