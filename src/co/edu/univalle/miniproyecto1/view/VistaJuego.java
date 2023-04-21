@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.text.DecimalFormat;
+import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -31,6 +32,10 @@ public class VistaJuego extends JFrame {
     private JLabel lblNombreJugador;
     private JLabel lblContadorAciertos;
     private JLabel lblContadorFallos;
+    
+    private JLabel lblImagenAleatoria;
+    
+    private Icon imagenAleatoria;
     
     private JButton btnA;
     private JButton btnE;
@@ -53,9 +58,7 @@ public class VistaJuego extends JFrame {
         setSize(480, 520); // Tamaño de la ventana
         setLocationRelativeTo(null); // Centra la ventana en la pantalla
         setResizable(false);
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); // Permite cerrar la ventana
-        setVisible(true);
-        setLayout(null);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         
         this.nombreJugador = nombreJugador;
         this.categoria = categoria;
@@ -66,14 +69,15 @@ public class VistaJuego extends JFrame {
         Jugador jugador = new Jugador(nombreJugador);
         juego = new Juego(categoria);
         palabraAleatoria = juego.getPalabra();
+        imagenAleatoria = juego.getImagen();
         
         inicializarComponentes(juego);
+        setVisible(true);
     }
 
     private void inicializarComponentes(Juego juego) {
         jpContenido = new JPanel();
         jpContenido.setSize(480, 580);
-        jpContenido.setBounds(0,0,480,580);
         jpContenido.setLayout(null);
         jpContenido.setBackground(Color.LIGHT_GRAY);
         
@@ -99,9 +103,13 @@ public class VistaJuego extends JFrame {
         lblContadorFallos.setForeground(Color.DARK_GRAY);
         lblContadorFallos.setBounds(390,5, 60,20);
         
+        lblImagenAleatoria = new JLabel();
+        lblImagenAleatoria.setIcon(imagenAleatoria);
+        lblImagenAleatoria.setBounds(176,60, 128,128);
+        
         lblPalabra = new JLabel(palabraAleatoria,SwingConstants.CENTER);
         lblPalabra.setFont(new Font("comic sans ms", Font.PLAIN, 40));
-        lblPalabra.setBounds(0,160, 480,80);
+        lblPalabra.setBounds(0,180, 480,80);
               
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos(juego);
         
@@ -146,6 +154,7 @@ public class VistaJuego extends JFrame {
         jpContenido.add(lblPalabrasMostradas);
         jpContenido.add(lblContadorAciertos);
         jpContenido.add(lblContadorFallos);
+        jpContenido.add(lblImagenAleatoria);
         jpContenido.add(lblPalabra);
         jpContenido.add(btnA);
         jpContenido.add(btnE);
@@ -192,6 +201,8 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    imagenAleatoria = juego.getImagen();
+                    lblImagenAleatoria.setIcon(imagenAleatoria);
                     palabrasMostradas += 1;
                     lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
@@ -214,6 +225,8 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    imagenAleatoria = juego.getImagen();
+                    lblImagenAleatoria.setIcon(imagenAleatoria);
                     palabrasMostradas += 1;
                     lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
@@ -236,6 +249,8 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    imagenAleatoria = juego.getImagen();
+                    lblImagenAleatoria.setIcon(imagenAleatoria);
                     palabrasMostradas += 1;
                     lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
@@ -258,6 +273,8 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    imagenAleatoria = juego.getImagen();
+                    lblImagenAleatoria.setIcon(imagenAleatoria);
                     palabrasMostradas += 1;
                     lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }
@@ -280,6 +297,8 @@ public class VistaJuego extends JFrame {
                     numeroFallos = juego.getNumeroFallos();
                     lblContadorAciertos.setText("Aciertos: " + numeroAciertos);
                     lblContadorFallos.setText("Fallos: " + numeroFallos);
+                    imagenAleatoria = juego.getImagen();
+                    lblImagenAleatoria.setIcon(imagenAleatoria);
                     palabrasMostradas += 1;
                     lblPalabrasMostradas.setText("Palabras mostradas: " + palabrasMostradas);
                 }

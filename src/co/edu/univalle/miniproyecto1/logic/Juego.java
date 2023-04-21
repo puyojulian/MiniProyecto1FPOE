@@ -5,6 +5,8 @@
 package co.edu.univalle.miniproyecto1.logic;
 
 import java.util.Random;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -21,6 +23,14 @@ public class Juego {
     private String palabrasIncompletasFrutas[];
     private String palabrasIncompletasColores[];
     
+    private String dirImagenesPalabrasAnimales[];
+    private String dirImagenesPalabrasFrutas[];
+    private String dirImagenesPalabrasColores[];
+    
+    private String dirImagen;
+    
+    private Icon imagen;
+    
     private int numeroAciertos;
     private int numeroFallos;
     private int indiceTemporal;
@@ -36,6 +46,10 @@ public class Juego {
         palabrasIncompletasFrutas = new String[] {"Manz_na", "P_ra", "Uv_", "Kiw_", "Aránd_no", "C_reza", "Aguac_te", "Banan_", "P_ña", "M_lón", "Gu_yaba", "Pap_ya", "L_lo", "N_ranja", "L_món"};
         palabrasIncompletasColores = new String[] {"Amarill_", "Az_l", "R_jo", "N_gro", "Nar_nja", "V_rde", "R_sado", "M_rrón", "Blanc_", "Vi_leta", "Gr_s", "Mag_nta", "Ci_n", "Púrp_ra","Celest_"};
         
+        dirImagenesPalabrasAnimales = new String[] {"/co/edu/univalle/miniproyecto1/img/animales0.png","/co/edu/univalle/miniproyecto1/img/animales1.png","/co/edu/univalle/miniproyecto1/img/animales2.png","/co/edu/univalle/miniproyecto1/img/animales3.png","/co/edu/univalle/miniproyecto1/img/animales4.png","/co/edu/univalle/miniproyecto1/img/animales5.png","/co/edu/univalle/miniproyecto1/img/animales6.png","/co/edu/univalle/miniproyecto1/img/animales7.png","/co/edu/univalle/miniproyecto1/img/animales8.png","/co/edu/univalle/miniproyecto1/img/animales9.png","/co/edu/univalle/miniproyecto1/img/animales10.png","/co/edu/univalle/miniproyecto1/img/animales11.png","/co/edu/univalle/miniproyecto1/img/animales12.png","/co/edu/univalle/miniproyecto1/img/animales13.png","/co/edu/univalle/miniproyecto1/img/animales14.png"};
+        dirImagenesPalabrasFrutas = new String[] {"co/edu/univalle/miniproyecto1/img/frutas0","co/edu/univalle/miniproyecto1/img/frutas1","co/edu/univalle/miniproyecto1/img/frutas2","co/edu/univalle/miniproyecto1/img/frutas3","co/edu/univalle/miniproyecto1/img/frutas4","co/edu/univalle/miniproyecto1/img/frutas5","co/edu/univalle/miniproyecto1/img/frutas6","co/edu/univalle/miniproyecto1/img/frutas7","co/edu/univalle/miniproyecto1/img/frutas8","co/edu/univalle/miniproyecto1/img/frutas9","co/edu/univalle/miniproyecto1/img/frutas10","co/edu/univalle/miniproyecto1/img/frutas11","co/edu/univalle/miniproyecto1/img/frutas12","co/edu/univalle/miniproyecto1/img/frutas13","co/edu/univalle/miniproyecto1/img/frutas14"};
+        dirImagenesPalabrasColores = new String[] {"co/edu/univalle/miniproyecto1/img/colores0","co/edu/univalle/miniproyecto1/img/colores1","co/edu/univalle/miniproyecto1/img/colores2","co/edu/univalle/miniproyecto1/img/colores3","co/edu/univalle/miniproyecto1/img/colores4","co/edu/univalle/miniproyecto1/img/colores5","co/edu/univalle/miniproyecto1/img/colores6","co/edu/univalle/miniproyecto1/img/colores7","co/edu/univalle/miniproyecto1/img/colores8","co/edu/univalle/miniproyecto1/img/colores9","co/edu/univalle/miniproyecto1/img/colores10","co/edu/univalle/miniproyecto1/img/colores11","co/edu/univalle/miniproyecto1/img/colores12","co/edu/univalle/miniproyecto1/img/colores13","co/edu/univalle/miniproyecto1/img/colores14"};
+        
         this.categoria = categoria;
         numeroAciertos = 0;
         numeroFallos = 0;
@@ -47,23 +61,46 @@ public class Juego {
         Random random = new Random();
         int indiceAleatorio = random.nextInt(15);
         
-//        System.out.println(""+indiceAleatorio);
-
         indiceTemporal = indiceAleatorio;
         
         if(categoria == "animales") {
-//            System.out.println(palabrasIncompletasAnimales[indiceTemporal]);
-            return palabrasIncompletasAnimales[indiceTemporal];
+            dirImagen = palabrasIncompletasAnimales[indiceTemporal];
+            return dirImagen;
         }
         else if(categoria == "frutas") {
-//            System.out.println(palabrasIncompletasFrutas[indiceTemporal]);
-            return palabrasIncompletasFrutas[indiceTemporal];
+            dirImagen = palabrasIncompletasFrutas[indiceTemporal];
+            return dirImagen;
         }
         else if(categoria == "colores") {
-//            System.out.println(palabrasIncompletasColores[indiceTemporal]);
-            return palabrasIncompletasColores[indiceTemporal];
+            dirImagen = palabrasIncompletasColores[indiceTemporal];
+            return dirImagen;
         }
         return null;
+    }
+    
+    public String getDirImagen() {
+        if(categoria == "animales") {
+            dirImagen = dirImagenesPalabrasAnimales[indiceTemporal];
+            return dirImagen;
+        }
+        else if(categoria == "frutas") {
+            dirImagen = dirImagenesPalabrasFrutas[indiceTemporal];
+            return dirImagen;
+        }
+        else if(categoria == "colores") {
+            dirImagen = dirImagenesPalabrasColores[indiceTemporal];
+            return dirImagen;
+        }
+        else {
+            return null;
+        }
+    }
+    
+    public Icon getImagen() {
+        this.getDirImagen();
+        imagen = new ImageIcon(new ImageIcon(getClass().getResource(dirImagen)).getImage()
+                .getScaledInstance(128,128,0)); 
+        return imagen;
     }
     
     public boolean verificarPalabra(char vocal) {
@@ -73,8 +110,6 @@ public class Juego {
         if(categoria == "animales") {
             palabraPorComparar = palabrasIncompletasAnimales[indiceTemporal];
             String replace = palabraPorComparar.replace('_', vocal);
-//            System.out.println("Vocal: " + vocal + " en la categoría " + categoria + ": " + palabrasCompletasAnimales[indiceTemporal] +" = "+ replace);
-//            System.out.println(""+(palabrasCompletasColores[indiceTemporal].equals(replace)));
             
             if(palabrasCompletasAnimales[indiceTemporal].equals(replace)) {
                 numeroAciertos += 1;
@@ -88,8 +123,6 @@ public class Juego {
         else if(categoria == "frutas") {
             palabraPorComparar = palabrasIncompletasFrutas[indiceTemporal];
             String replace = palabraPorComparar.replace('_', vocal);
-//            System.out.println("Vocal: " + vocal + " en la categoría " + categoria + ": " + palabrasCompletasFrutas[indiceTemporal] +" = "+ replace);
-//            System.out.println(""+(palabrasCompletasColores[indiceTemporal].equals(replace)));
             
             if(palabrasCompletasFrutas[indiceTemporal].equals(replace)) {
                 numeroAciertos += 1;
@@ -103,8 +136,6 @@ public class Juego {
         else if(categoria == "colores") {
             palabraPorComparar = palabrasIncompletasColores[indiceTemporal];
             String replace = palabraPorComparar.replace('_', vocal);
-//            System.out.println("Vocal: " + vocal + " en la categoría " + categoria + ": " + palabrasCompletasColores[indiceTemporal] +" = "+ replace);
-//            System.out.println(""+(palabrasCompletasColores[indiceTemporal].equals(replace)));
             
             if(palabrasCompletasColores[indiceTemporal].equals(replace)) {
                 numeroAciertos += 1;
