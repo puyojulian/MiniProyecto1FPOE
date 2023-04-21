@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package co.edu.univalle.miniproyecto1.view;
 
 import javax.swing.*;
@@ -9,9 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 /**
- * @author julian puyo
- * @author juan david rodriguez
+ * @author Julian Puyo
+ * @author Juan David Rodriguez
  */
 public class VistaInstrucciones extends JFrame {
     
@@ -38,7 +35,7 @@ public class VistaInstrucciones extends JFrame {
         jpContenido.setSize(480,520);        
         jpContenido.setBounds(0,0, 480, 520);
         jpContenido.setLayout(null);
-        jpContenido.setBackground(Color.GRAY);
+        jpContenido.setBackground(Color.DARK_GRAY);
         
         add(jpContenido);
         
@@ -54,14 +51,14 @@ public class VistaInstrucciones extends JFrame {
         btnJugar.setBounds(160,270, 150,50);
         btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnJugar.setForeground(Color.DARK_GRAY);
-        btnJugar.setBackground(Color.ORANGE);
+        btnJugar.setBackground(new Color(133,202,93));
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnVolver = new JButton("Volver");
         btnVolver.addActionListener(manejadorDeEventos);
         btnVolver.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnVolver.setForeground(Color.DARK_GRAY);
-        btnVolver.setBackground(Color.LIGHT_GRAY);
+        btnVolver.setBackground(new Color(252,169,133));
         btnVolver.setBounds(160,330, 150,50);
         
         jpContenido.add(lblInstrucciones);

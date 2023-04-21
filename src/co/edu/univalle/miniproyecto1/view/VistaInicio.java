@@ -5,6 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+/**
+ * @author Julian Puyo
+ */
 public class VistaInicio extends JFrame {
     private JPanel jpContenido;
     private JLabel lblIntro;
@@ -50,14 +54,14 @@ public class VistaInicio extends JFrame {
         btnJugar.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnJugar.setBounds(160,270, 150,50);
         btnJugar.setForeground(Color.DARK_GRAY);
-        btnJugar.setBackground(new Color(124,168,233));
+        btnJugar.setBackground(new Color(252,169,133));
         btnJugar.addActionListener(manejadorDeEventos);
         
         btnInstrucciones = new JButton("Instrucciones");
         btnInstrucciones.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         btnInstrucciones.setBounds(160,330, 150,50);
         btnInstrucciones.setForeground(Color.DARK_GRAY);
-        btnInstrucciones.setBackground(Color.LIGHT_GRAY);
+        btnInstrucciones.setBackground(new Color(134,207,190));
         btnInstrucciones.addActionListener(manejadorDeEventos);
         
         jpContenido.add(lblIntro);

@@ -10,8 +10,7 @@ import javax.swing.ImageIcon;
 
 
 /**
- *
- * @author julia
+ * @author Julian Puyo
  */
 public class Juego {
     

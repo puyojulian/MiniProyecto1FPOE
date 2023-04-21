@@ -16,9 +16,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
+
+
 /**
- *
- * @author julia
+ * @author Julian Puyo
  */
 public class VistaParametros extends JFrame{
     
@@ -51,23 +52,25 @@ public class VistaParametros extends JFrame{
         jpContenido.setSize(480, 580);
         jpContenido.setBounds(0,0,480,580);
         jpContenido.setLayout(null);
-        jpContenido.setBackground(Color.LIGHT_GRAY);
+        jpContenido.setBackground(Color.DARK_GRAY);
         
         add(jpContenido);
         
         lblNombre = new JLabel("Escribe tu nombre",SwingConstants.CENTER);
         lblNombre.setFont(new Font("comic sans ms", Font.PLAIN, 22));
+        lblNombre.setForeground(Color.WHITE);
         lblNombre.setBounds(0,100, 480,30);
    
         txtNombre = new JTextField();
         txtNombre.setHorizontalAlignment(JTextField.CENTER);
-        txtNombre.setForeground(Color.CYAN);
+        txtNombre.setForeground(new Color(179,226,221));
         txtNombre.setBackground(Color.GRAY);
         txtNombre.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         txtNombre.setBounds(90,150, 300,30);
         
         lblCategoria = new JLabel("Escoje tu categoria",SwingConstants.CENTER);
         lblCategoria.setFont(new Font("comic sans ms", Font.PLAIN, 22));
+        lblCategoria.setForeground(Color.WHITE);
         lblCategoria.setBounds(0,250, 480,30);
         
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos();
@@ -75,22 +78,25 @@ public class VistaParametros extends JFrame{
         btnCatAnimales = new JToggleButton("Animales");
         btnCatAnimales.setBounds(90,300, 100,35);
         btnCatAnimales.setFont(new Font("comic sans ms", Font.PLAIN, 14));
+        btnCatAnimales.setBackground(new Color(252,169,133));
         btnCatAnimales.addActionListener(manejadorDeEventos);
         
         btnCatColores = new JToggleButton("Colores");
         btnCatColores.setBounds(190,300, 100,35);
         btnCatColores.setFont(new Font("comic sans ms", Font.PLAIN, 14));
+        btnCatColores.setBackground(new Color(72,181,163));
         btnCatColores.addActionListener(manejadorDeEventos);
         
         btnCatFrutas = new JToggleButton("Frutas");
         btnCatFrutas.setBounds(290,300, 100,35);
         btnCatFrutas.setFont(new Font("comic sans ms", Font.PLAIN, 14));
+        btnCatFrutas.setBackground(new Color(249,140,182));
         btnCatFrutas.addActionListener(manejadorDeEventos);
         
         btnConfirmar = new JButton("Confirmar");
         btnConfirmar.setBounds(180,370, 120,35);
         btnConfirmar.setFont(new Font("comic sans ms", Font.PLAIN, 14));
-        btnConfirmar.setBackground(Color.pink);
+        btnConfirmar.setBackground(new Color(191,228,118));
         btnConfirmar.addActionListener(manejadorDeEventos);
         
         jpContenido.add(lblNombre);

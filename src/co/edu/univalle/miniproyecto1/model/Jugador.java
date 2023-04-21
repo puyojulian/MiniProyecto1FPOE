@@ -5,8 +5,7 @@
 package co.edu.univalle.miniproyecto1.model;
 
 /**
- *
- * @author julia
+ * @author Julian Puyo
  */
 public class Jugador {
     private String nombre;

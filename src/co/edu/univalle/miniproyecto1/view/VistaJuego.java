@@ -17,9 +17,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+
 /**
- * @author julian puyo
- * @author juan david rodriguez
+ * @author Julian Puyo
+ * @author Juan David Rodriguez
  */
 public class VistaJuego extends JFrame {
     
@@ -116,38 +117,38 @@ public class VistaJuego extends JFrame {
         btnA = new JButton("a");
         btnA.setBounds(90,300, 50,50);
         btnA.setFont(new Font("comic sans ms", Font.PLAIN, 20));
-        btnA.setBackground(Color.orange);
+        btnA.setBackground(new Color(252,169,133));
         btnA.addActionListener(manejadorDeEventos);
         
         btnE = new JButton("e");
         btnE.setBounds(150,320, 50,50);
         btnE.setFont(new Font("comic sans ms", Font.PLAIN, 20));
-        btnE.setBackground(Color.cyan);
+        btnE.setBackground(new Color(134,207,190));
         btnE.addActionListener(manejadorDeEventos);
         
         btnI = new JButton("i");
         btnI.setBounds(210,300, 50,50);
         btnI.setFont(new Font("comic sans ms", Font.PLAIN, 20));
-        btnI.setBackground(Color.yellow);
+        btnI.setBackground(new Color(255,250,129));
         btnI.addActionListener(manejadorDeEventos);
         
         btnO = new JButton("o");
         btnO.setBounds(270,320, 50,50);
         btnO.setFont(new Font("comic sans ms", Font.PLAIN, 20));
-        btnO.setBackground(Color.GREEN);
+        btnO.setBackground(new Color(191,228,118));
         btnO.addActionListener(manejadorDeEventos);
         
         btnU = new JButton("u");
         btnU.setBounds(330,300, 50,50);
         btnU.setFont(new Font("comic sans ms", Font.PLAIN, 20));
-        btnU.setBackground(Color.pink);
+        btnU.setBackground(new Color(251,182,209));
         btnU.addActionListener(manejadorDeEventos);
         
         btnTerminar = new JButton("Terminar");
         btnTerminar.setBounds(355,430, 80,25);
         btnTerminar.setFont(new Font("comic sans ms", Font.PLAIN, 9));
-        btnTerminar.setForeground(Color.ORANGE);
-        btnTerminar.setBackground(Color.GRAY);
+        btnTerminar.setForeground(new Color(252,169,133));
+        btnTerminar.setBackground(Color.DARK_GRAY);
         btnTerminar.addActionListener(manejadorDeEventos);
         
         jpContenido.add(lblNombreJugador);
