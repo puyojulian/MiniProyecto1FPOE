@@ -80,28 +80,28 @@ public class VistaJuego extends JFrame {
         jpContenido = new JPanel();
         jpContenido.setSize(480, 580);
         jpContenido.setLayout(null);
-        jpContenido.setBackground(Color.LIGHT_GRAY);
+        jpContenido.setBackground(Color.DARK_GRAY);
         
         add(jpContenido);
         
         lblNombreJugador = new JLabel("Nombre: " + nombreJugador);
         lblNombreJugador.setFont(new Font("comic sans ms", Font.BOLD, 12));
-        lblNombreJugador.setForeground(Color.DARK_GRAY);
+        lblNombreJugador.setForeground(Color.WHITE);
         lblNombreJugador.setBounds(20,5, 200,20);
         
         lblPalabrasMostradas = new JLabel("Palabras mostradas: " + palabrasMostradas);
         lblPalabrasMostradas.setFont(new Font("comic sans ms", Font.BOLD, 12));
-        lblPalabrasMostradas.setForeground(Color.DARK_GRAY);
+        lblPalabrasMostradas.setForeground(Color.WHITE);
         lblPalabrasMostradas.setBounds(20,30, 250,20);
         
         lblContadorAciertos = new JLabel("Aciertos: " + numeroAciertos);
         lblContadorAciertos.setFont(new Font("comic sans ms", Font.BOLD, 12));
-        lblContadorAciertos.setForeground(Color.DARK_GRAY);
+        lblContadorAciertos.setForeground(Color.WHITE);
         lblContadorAciertos.setBounds(280,5, 90,20);
         
         lblContadorFallos = new JLabel("Fallos: " + numeroFallos);
         lblContadorFallos.setFont(new Font("comic sans ms", Font.BOLD, 12));
-        lblContadorFallos.setForeground(Color.DARK_GRAY);
+        lblContadorFallos.setForeground(Color.WHITE);
         lblContadorFallos.setBounds(390,5, 60,20);
         
         lblImagenAleatoria = new JLabel();
@@ -110,6 +110,7 @@ public class VistaJuego extends JFrame {
         
         lblPalabra = new JLabel(palabraAleatoria,SwingConstants.CENTER);
         lblPalabra.setFont(new Font("comic sans ms", Font.PLAIN, 40));
+        lblPalabra.setForeground(Color.WHITE);
         lblPalabra.setBounds(0,180, 480,80);
               
         ManejadorDeEventos manejadorDeEventos = new ManejadorDeEventos(juego);

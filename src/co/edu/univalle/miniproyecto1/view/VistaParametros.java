@@ -63,7 +63,8 @@ public class VistaParametros extends JFrame{
    
         txtNombre = new JTextField();
         txtNombre.setHorizontalAlignment(JTextField.CENTER);
-        txtNombre.setForeground(new Color(179,226,221));
+//        txtNombre.setForeground(new Color(179,226,221));
+        txtNombre.setForeground(Color.WHITE);
         txtNombre.setBackground(Color.GRAY);
         txtNombre.setFont(new Font("comic sans ms", Font.PLAIN, 16));
         txtNombre.setBounds(90,150, 300,30);
