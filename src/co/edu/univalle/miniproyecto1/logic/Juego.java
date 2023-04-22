@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 
 /**
  * @author Julian Puyo
+ * 
  */
 public class Juego {
     

@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * @author Julian Puyo
+ * @author Juan David Rodriguez
  */
 public class VistaInicio extends JFrame {
     private JPanel jpContenido;

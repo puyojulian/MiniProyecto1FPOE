@@ -8,7 +8,8 @@ import co.edu.univalle.miniproyecto1.view.VistaInicio;
 
 /**
  *
- * @author julia
+ * @author Julian Puyo
+ * @author Juan David Rodriguez
  */
 public class Main {
     public static void main(String[] args) {
